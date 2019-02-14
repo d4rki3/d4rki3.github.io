@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+  <html>
+    <head>
+      <title>Pedagio HTML 6</title>
+    </head>
+<!--    inicio style    -->  
+   <style>
+  body {
+    border-width: 8px;
+    border-style: solid;
+    border-color: blue;
+    //background-color: skyblue;
+    width: 900px;
+    //height: 200px;
+    margin: 0;
+    padding: 0;
+  }
+  form {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+    height: 250px;
+  }
+  table {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+  div {
+    //display: flex;
+    //flex-wrap: wrap;
+    //width: 100%;
+    //height: 250px;
+    //background-color: red;
+  }
+  h3 {
+    background-color: red;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  #button1{
+    background-color: blue;
+    //display: flex;
+    float: left;
+    width: 19%;
+    height: 28%;
+    margin: 3px;
+    padding: 2px;
+  }
+  #button2{
+    background-color: blue;
+    //display: inline;
+    //position: relative;
+    //float: center;
+    //align: center;
+    width: 40%;
+    height: 30%;
+    margin: 4px;
+    padding: 20px;
+  }
+  #centro {
+    display:flex;
+    //position: auto;
+    justify-content:center;
+    text-align: right;
+    align-items:center;
+    float: center;
+    //height: 100px;
+    //margin: 0;
+    //padding: 0;
+  }
+  #in_troco {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    //height: 100px;
+    margin: 0;
+    padding: 0;
+  }
+  #esquerda1 {
+    //display: flex;
+    //position: absolute;
+    box-sizing: border-box;
+    background-color: skyblue;
+    float: left;
+    width: 78%;
+    //max-height: 200px;
+    margin: 5px;
+    padding: 5px;
+  }
+  #esquerda2 {
+     //pointer-events: none;
+    //display: inline;
+    //position: relative;
+    box-sizing: border-box;
+    background-color: skyblue;
+    float: left;
+    width: 78%;
+    //max-height: 200px;
+    margin: 5px;
+    padding: 5px;
+  }
+  #direita1 {
+    pointer-events: none;
+    display: flex;
+    position: auto;
+    box-sizing: border-box;
+    //background-color: skyblue;
+    float: top;
+    width: 95%;
+    height: 120px;
+    //max-height: 200px;
+    overflow: auto;
+    margin: 5px;
+    padding: 5px;
+  }
+  #direita2 {
+    pointer-events: none;
+    display: flex;
+    position: auto;
+    box-sizing: border-box;
+    background-color: white;
+    float: bottom;
+    width: 95%;
+    height: 125px;
+    //max-height: 200px;
+    //overflow: auto;
+    margin: 5px;
+    padding: 5px;
+  }
+ </style>
+ <!--    fim style    -->
+ <!--    inicio script    -->
+ <script>
+  function hora(){
+    var dd = new Date().getDate();
+    var m = new Date().getMonth() +1;
+    var aa = new Date().getFullYear();
+
+     if (dd < 10){ dd = "0" + dd;};
+     if (m < 10){m = "0" + m;}
+
+    var hh = new Date().getHours();
+    var mm = new Date().getMinutes();
+    var ss = new Date().getSeconds();
+
+    if (ss < 10){ ss = "0" + ss;};
+    if (mm < 10){mm = "0" + mm;}
+    if (hh < 10){hh = "0" + hh;}
+
+    var data = dd +"/"+ m +"/"+ aa;
+    tempo = hh + ":" + mm + ":" + ss;
+
+    document.getElementById('data_hora').innerHTML = data +"&nbsp"+ tempo;
+    setTimeout("hora('tmp')", 1000);
+  }
+
+  function calc_valor(a){
+      if (a == 07){
+           taxa = 3.8 * 1.5;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else if (a == 08){
+           taxa = 3.8 * 2;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else if (a == 09){
+           taxa = 3.8 * 0.5;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else if (a == 61){
+           taxa = 3.8 * 7;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else if (a == 62){
+           taxa = 3.8 * 8;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else if (a == 63){
+           taxa = 3.8 * 9;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }else {
+           taxa = 3.8 * a;
+           taxaDec = parseFloat(taxa).toFixed(2);
+           document.getElementById('in_troco').value = taxaDec;
+           document.getElementById('categoria').innerHTML = "&nbsp;&nbsp" + cat + " categoria " + cat;
+           document.getElementById('valor').innerHTML = "&nbsp;&nbsp" + taxaDec;
+       }
+       calc_troco();
+  }
+
+  function calc_troco(){
+    var vrecebido = parseFloat(document.getElementById('in_troco').value);
+    var vtaxa = taxaDec;
+    var vtroco = vrecebido - vtaxa;
+    document.getElementById('troco').innerHTML = parseFloat(vtroco).toFixed(2);
+    setTimeout("calc_troco()", 1000);
+  }
+
+  function aceitar() {
+    cancelar()
+    var hora = tempo;
+    // document.getElementById('data_hora').firstChild.data;
+    ca = cat;
+    var din = "dinheiro";
+    var table = document.getElementById('direita1');
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = hora;
+    cell2.innerHTML = ca;
+    cell3.innerHTML = din;
+    document.getElementById('esquerda2').style.display="none";
+    document.getElementById('esquerda1').style.display="block";
+  }
+
+  function cancelar() {
+    document.getElementById('direita1').deleteRow(1);
+    document.getElementById('esquerda2').style.display="none";
+    document.getElementById('esquerda1').style.display="block";
+  }
+
+  function adicionar(a) {
+    var hora = tempo;
+   // document.getElementById('data_hora').firstChild.data;
+    cat = a;
+    //var din = "dinheiro";
+    var table = document.getElementById('direita1'); 
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    cell1.innerHTML = hora;
+    cell2.innerHTML = cat;
+    //cell3.innerHTML = din;
+    document.getElementById('esquerda1').style.display="none";
+    document.getElementById('esquerda2').style.display="block";
+    calc_valor(a);
+  }
+
+  window.onload=hora;
+ </script>
+ 
+ <body>
+  
+  <!--span id="data_hora" style="text-align:center";></span--> 
+  <p style="text-align:center";>Praça de pedágio Jambeiro</p>
+  <p id="data_hora" style="text-align:center";></p>
+   
+   <form id="esquerda1">
+    <h3>Escolha de categoria</h3>
+     <input type="button" id="button1" value="cat01" onclick="adicionar('01')">
+     <input type="button" id="button1" value="cat02" onclick="adicionar('02')">
+     <input type="button" id="button1" value="cat03" onclick="adicionar('03')">
+     <input type="button" id="button1" value="cat04" onclick="adicionar('04')">
+     <input type="button" id="button1" value="cat05" onclick="adicionar('05')">
+     <br>
+     <input type="button" id="button1" value="cat06" onclick="adicionar('06')">
+     <input type="button" id="button1" value="cat07" onclick="adicionar('07')">
+     <input type="button" id="button1" value="cat08" onclick="adicionar('08')">
+     <input type="button" id="button1" value="cat09" onclick="adicionar('09')">
+     <input type="button" id="button1" value="cat61" onclick="adicionar('61')">
+     <br>
+     <input type="button" id="button1" value="cat62" onclick="adicionar('62')">
+     <input type="button" id="button1" value="cat63" onclick="adicionar('63')">
+   </form>
+   
+   <div style="float: right; width:20%;">
+    
+   <table id="direita1">
+    <tr>
+     <th style="width:70px;">Hora</th>
+     <th>Ca</th> 
+     <th style="width:100px;">F.Pagto</th>
+    </tr>
+    <tr>
+     <td></td><td></td>
+    </tr>
+   </table>
+   
+    <form id="direita2"></form>
+    
+   </div>
+   
+    <form id="esquerda2" style="display:none">
+     
+     <h3 id="categoria">00 Categoria 00</h3>
+     <br>
+     
+      <span id="centro";>valor:
+         <span id="valor"></span>
+      </span>
+     
+     <div id="centro">
+        <label style="text-align:right;">recebido</label>
+               <input id="in_troco" type="text" style="text-align:right;">
+     </div>
+     
+     <p id="troco" style="text-align:center";>troco</p>
+     
+     <div id="centro">
+       <input type="button" id="button2" value="aceitar" onclick="aceitar()">
+       <input type="button" id="button2" value="cancelar" onclick="cancelar()">
+     </div>
+     
+    </form>
+   
+   <div style="clear: both"></div> 
+   
+ </body>
+</html>
