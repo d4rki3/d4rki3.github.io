@@ -6,11 +6,11 @@
 <!--    inicio style    -->  
    <style>
   body {
-    border-width: 8px;
+    border-width: 5px;
     border-style: solid;
     border-color: blue;
     //background-color: skyblue;
-    width: 900px;
+    width: 1024px;
     //height: 200px;
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@
     border-width: 5px;
     border-style: solid;
     border-color: blue;
-    height: 250px;
+    height: 270px;
   }
   table {
     border-width: 5px;
@@ -30,13 +30,6 @@
     background-color: white;
     margin: 0;
     padding: 0;
-  }
-  div {
-    //display: flex;
-    //flex-wrap: wrap;
-    //width: 100%;
-    //height: 250px;
-    //background-color: red;
   }
   h3 {
     background-color: red;
@@ -114,7 +107,7 @@
     //background-color: skyblue;
     float: top;
     width: 95%;
-    height: 120px;
+    height: 130px;
     //max-height: 200px;
     overflow: auto;
     margin: 5px;
@@ -128,7 +121,7 @@
     background-color: white;
     float: bottom;
     width: 95%;
-    height: 125px;
+    height: 135px;
     //max-height: 200px;
     //overflow: auto;
     margin: 5px;
@@ -212,7 +205,18 @@
     var vrecebido = parseFloat(document.getElementById('in_troco').value);
     var vtaxa = taxaDec;
     var vtroco = vrecebido - vtaxa;
-    document.getElementById('troco').innerHTML = parseFloat(vtroco).toFixed(2);
+    if (vtroco >= 0) {
+        document.getElementById('troco').innerHTML = parseFloat(vtroco).toFixed(2);
+        document.getElementById('falta').innerHTML = 0;
+    }
+    else if (vtroco <= 0) {
+        document.getElementById('falta').innerHTML = parseFloat(vtroco).toFixed(2);
+        document.getElementById('troco').innerHTML = 0;
+    }
+    else {
+       document.getElementById('troco').innerHTML = 0;
+       document.getElementById('falta').innerHTML = taxaDec;
+    }
     setTimeout("calc_troco()", 1000);
   }
 
@@ -291,7 +295,7 @@
     <tr>
      <th style="width:70px;">Hora</th>
      <th>Ca</th> 
-     <th style="width:100px;">F.Pagto</th>
+     <th style="width:100px;">F.Pagto &nbsp</th>
     </tr>
     <tr>
      <td></td><td></td>
@@ -305,23 +309,26 @@
     <form id="esquerda2" style="display:none">
      
      <h3 id="categoria">00 Categoria 00</h3>
-     <br>
      
-      <span id="centro";>valor:
+      <p id="centro";>valor:
          <span id="valor"></span>
-      </span>
+      </p>
      
-     <div id="centro">
-        <label style="text-align:right;">recebido</label>
-               <input id="in_troco" type="text" style="text-align:right;">
-     </div>
+     <p id="centro">
+              recebido &nbsp <input id="in_troco" type="text" style="text-align:right;">
+     </p>
      
-     <p id="troco" style="text-align:center";>troco</p>
+     <p id="centro">
+              troco &nbsp <span id="troco"></span>
+     </p>
+     <p id="centro" style="color:red;">
+             falta &nbsp <span id="falta"></span>
+     </p>
      
-     <div id="centro">
+     <p id="centro">
        <input type="button" id="button2" value="aceitar" onclick="aceitar()">
        <input type="button" id="button2" value="cancelar" onclick="cancelar()">
-     </div>
+     </p>
      
     </form>
    
