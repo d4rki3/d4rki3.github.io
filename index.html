@@ -200,7 +200,6 @@
        }
        calc_troco();
   }
-
   function calc_troco(){
     var vrecebido = parseFloat(document.getElementById('in_troco').value);
     var vtaxa = taxaDec;
@@ -219,13 +218,10 @@
     }
     setTimeout("calc_troco()", 1000);
   }
-
   function aceitar() {
     cancelar()
     var hora = tempo;
-    // document.getElementById('data_hora').firstChild.data;
     ca = cat;
-    var din = "dinheiro";
     var table = document.getElementById('direita1');
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
@@ -233,22 +229,18 @@
     var cell3 = row.insertCell(2);
     cell1.innerHTML = hora;
     cell2.innerHTML = ca;
-    cell3.innerHTML = din;
+    cell3.innerHTML = "&nbsp; &nbsp dinheiro";
     document.getElementById('esquerda2').style.display="none";
     document.getElementById('esquerda1').style.display="block";
   }
-
   function cancelar() {
     document.getElementById('direita1').deleteRow(1);
     document.getElementById('esquerda2').style.display="none";
     document.getElementById('esquerda1').style.display="block";
   }
-
   function adicionar(a) {
     var hora = tempo;
-   // document.getElementById('data_hora').firstChild.data;
     cat = a;
-    //var din = "dinheiro";
     var table = document.getElementById('direita1'); 
     var row = table.insertRow(1);
     var cell1 = row.insertCell(0);
@@ -256,37 +248,35 @@
     var cell3 = row.insertCell(2);
     cell1.innerHTML = hora;
     cell2.innerHTML = cat;
-    //cell3.innerHTML = din;
     document.getElementById('esquerda1').style.display="none";
     document.getElementById('esquerda2').style.display="block";
     calc_valor(a);
   }
-
   window.onload=hora;
  </script>
- 
+<!--  fim script  -->
+
  <body>
-  
   <!--span id="data_hora" style="text-align:center";></span--> 
   <p style="text-align:center";>Praça de pedágio Jambeiro</p>
   <p id="data_hora" style="text-align:center";></p>
    
    <form id="esquerda1">
     <h3>Escolha de categoria</h3>
-     <input type="button" id="button1" value="cat01" onclick="adicionar('01')">
-     <input type="button" id="button1" value="cat02" onclick="adicionar('02')">
-     <input type="button" id="button1" value="cat03" onclick="adicionar('03')">
-     <input type="button" id="button1" value="cat04" onclick="adicionar('04')">
-     <input type="button" id="button1" value="cat05" onclick="adicionar('05')">
+     <input type="button" id="button1" value="01" onclick="adicionar('01')">
+     <input type="button" id="button1" value="02" onclick="adicionar('02')">
+     <input type="button" id="button1" value="03" onclick="adicionar('03')">
+     <input type="button" id="button1" value="04" onclick="adicionar('04')">
+     <input type="button" id="button1" value="05" onclick="adicionar('05')">
      <br>
-     <input type="button" id="button1" value="cat06" onclick="adicionar('06')">
-     <input type="button" id="button1" value="cat07" onclick="adicionar('07')">
-     <input type="button" id="button1" value="cat08" onclick="adicionar('08')">
-     <input type="button" id="button1" value="cat09" onclick="adicionar('09')">
-     <input type="button" id="button1" value="cat61" onclick="adicionar('61')">
+     <input type="button" id="button1" value="06" onclick="adicionar('06')">
+     <input type="button" id="button1" value="07" onclick="adicionar('07')">
+     <input type="button" id="button1" value="08" onclick="adicionar('08')">
+     <input type="button" id="button1" value="09" onclick="adicionar('09')">
+     <input type="button" id="button1" value="61" onclick="adicionar('61')">
      <br>
-     <input type="button" id="button1" value="cat62" onclick="adicionar('62')">
-     <input type="button" id="button1" value="cat63" onclick="adicionar('63')">
+     <input type="button" id="button1" value="62" onclick="adicionar('62')">
+     <input type="button" id="button1" value="63" onclick="adicionar('63')">
    </form>
    
    <div style="float: right; width:20%;">
