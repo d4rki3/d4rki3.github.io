@@ -31,6 +31,10 @@
     margin: 0;
     padding: 0;
   }
+  th, tr, td {
+        width:70px;
+        text-align:center;
+    }
   h3 {
     background-color: red;
     text-align: center;
@@ -229,7 +233,7 @@
     var cell3 = row.insertCell(2);
     cell1.innerHTML = hora;
     cell2.innerHTML = ca;
-    cell3.innerHTML = "&nbsp; &nbsp dinheiro";
+    cell3.innerHTML = "dinheiro";
     document.getElementById('esquerda2').style.display="none";
     document.getElementById('esquerda1').style.display="block";
   }
@@ -285,10 +289,10 @@
     <tr>
      <th style="width:70px;">Hora</th>
      <th>Ca</th> 
-     <th style="width:100px;">F.Pagto &nbsp</th>
+     <th style="width:70px;">F.Pagto</th>
     </tr>
     <tr>
-     <td></td><td></td>
+     <td style="width:70px; text-align:right"></td><td></td>
     </tr>
    </table>
    
