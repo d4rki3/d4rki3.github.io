@@ -1,2 +1,2 @@
-# d4rki3.github.io
+simulador.pedagio.githib.io
 Simulador de pedágio
