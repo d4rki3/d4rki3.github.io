@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf8" />
+		<title>gasto de gasolina</title>
+		<script type="text/javascript">
+			function calc_result(){
+				var vvalor = parseFloat(document.getElementById('valor').value);
+				var vconsumo = parseFloat(document.getElementById('consumo').value);
+				var vdistancia = parseFloat(document.getElementById('distancia').value);
+				var vresultado = vdistancia / vconsumo * vvalor;
+				if(vresultado){
+					document.getElementById('total').innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; total &nbsp;" + parseFloat(vresultado).toFixed(2);
+				}
+				else{
+					document.getElementById('total').innerHTML = "&nbsp; &nbsp; &nbsp; &nbsp; total 00"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<label>&nbsp; &nbsp; &nbsp; &nbsp; valor</label>
+			<input type="text"  id="valor" >
+			<br>
+			<label>consumo</label>
+			<input type="text"  id="consumo" >
+			<br>
+			<label>distancia</label>
+			<input type="texe"  id="distancia" >
+			<br>
+			<label>-&nbsp; -&nbsp; -&nbsp; -&nbsp;-</label>
+			<input type="button"  id="consumo" value="calcular" onclick="calc_result()" >
+		</div>
+		<div id="total" >
+			&nbsp; &nbsp; &nbsp; &nbsp; total 00
+		</div>
+	</body>
+</html>

@@ -1,65 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>D4rki3</title>
-	<style type="text/css">
-	#myCanvas{
-		//background:white;
-		width:95%;
-		height:400px;
-		border:15px solid red;
-		margin:10px;
-	}
-	
-	h1, h2{
-		display:inline-block;
-		position:relative;
-		background:blue;
-		width:95%;
-		margin:25px;
-		text-align:center;
-	}
-	
-	#fundo{
-		display:inline-block;
-		position:relative;
-		background:black;
-		//background-image:url("img/fundo.jpg");;
-		width:100%;
-		margin-right:10px;
-	}
-	
-	</style>
+	<title>D4rki3</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
 	<div id="fundo" >
 		<canvas id="myCanvas"></canvas>
-		
+
 		<div>
 			<h1>Versoes Demo</h1>
 			<h2>Escolha um link</h2>
 		</div>
+
+		<a id="links" href="/frenteDeCaixa/index.html" >Frente de Caixa</a>
+		<br>
+		<a id="links" href="/mesaDeSom/index.html" >Mesa de Som</a>
+		<br>
+		<a id="links" href="/gastoDeGasolina/index.html" >Gasto de Gasolina</a>
 	</div>
-		
-	<script type="text/javascript">
-		var c = document.getElementById("myCanvas");
-		var ctx = c.getContext("2d");
-		
-		ctx.font = "30px Verdana";
-		// Create gradient
-		var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
-		gradient.addColorStop("0", "green");
-		gradient.addColorStop("0.5", "blue");
-		gradient.addColorStop("1.0", "red");
-		// Fill with gradient
-		ctx.fillStyle = gradient;
-		ctx.fillText("Desenvolvedor G33k", 10, 80);
-		
-		ctx.font = "20px Georgia";
-		ctx.fillText("+55 12 996003513", 55, 115);
-		
-		ctx.font = "20px Georgia";
-		ctx.fillText("D4rki3 - Jarson Santos", 45, 40);
-	</script>
+	<script src="js/script.js"></script>
 </body>
 </html>
