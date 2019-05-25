@@ -1,7 +1,7 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-ctx.font = "28px Verdana";
+ctx.font = "27px Verdana";
 // Create gradient
 var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
 gradient.addColorStop("0", "green");
