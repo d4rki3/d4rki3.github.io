@@ -1,9 +1,11 @@
 #myCanvas{
+	display:block;
 	//background:white;
 	width:95%;
 	height:400px;
 	border:15px solid red;
-	margin:15px;
+	margin:auto;
+	margin-top:15px;
 }
 
 h1, h2{
@@ -19,7 +21,7 @@ h1, h2{
 	display:inline-block;
 	position:relative;
 	background:black;
-	//background-image:url("img/fundo.jpg");;
+	//background-image:url("img/fundo.jpg");
 	width:100%;
 	margin-right:10px;
 }
