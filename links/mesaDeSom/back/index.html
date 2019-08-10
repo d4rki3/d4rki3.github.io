@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset=UTF-8">
+	<title>Mesa de som</title>
+	<style type="text/css">
+		body {
+			//display:inline-block;
+			//position:relative;
+			box-shadow: 5px 5px 5px black;
+			border-width: 15px;
+			border-style: solid;
+			border-color:black;
+			//border-radius: 10px;
+			//background:aqua;
+			//text-align:center;
+			//align-items:center;
+			width:90%;
+			//margin:120px;
+			//margin-right:auto 20px;
+			padding:20px;}
+	
+		h1{
+			background:black;
+			color:white;
+			text-align:center;
+			//width:100%;
+			//width:690px;}
+			
+		div{
+			display:inline-block;
+			position:relative;
+			background-color:green;
+			text-align:center;
+			width:100%;}
+				
+		label{
+			display: inline-block;
+			//position:relative;
+			//left:7px;
+			border:1px solid gray;
+			//background-color: #ccc;
+			//cursor: pointer;
+			margin:2px;
+			//padding:0;
+			height: 40px;
+			//width:3%;
+			width: 11%;}
+			
+		.butt > input[type=checkbox] + label{
+			display: inline-block;
+			//position:relative;
+			//left:7px;
+			border:1px solid gray;
+			background-color: #ccc;
+			cursor: pointer;
+			margin:2px;
+			//padding:0;
+			height: 40px;
+			//width:3%;
+			width: 11%;}
+			
+		.butt > input[type=checkbox]{display: none;}
+		
+		.butt > input[type=checkbox]:checked + label{
+			border:1px solid red;
+			background-color: yellow;}
+			
+		select{
+			//display:inline-block;
+			//position: relative;
+			border:1px solid gray;
+			//float:left;
+			//top: 40%;
+			//left: 5px;
+			//transform: rotate(90deg);
+			//outline:solid;
+			//margin-left: 0px;
+			width:11%;
+			margin:3px;
+			//padding: 0;}
+	</style>
+	</head>
+		<body>
+		<h1>Mesa de som 24ch</h1>
+			
+		<div id="lab1" ></div>
+		<div id="dbutt1" class="butt"></div>
+		<div id="ch1"></div>
+			<br>
+			<br>
+		<div id="lab2" ></div>
+		<div id="dbutt2" class="butt"></div>
+		<div id="ch2"></div>
+			<br>
+			<br>
+		<div id="lab3" ></div>
+		<div id="dbutt3" class="butt"></div>
+		<div id="ch3"></div>
+		
+	<script>
+		function cria_lab(){
+			for (var i=0; i < 24; i++){
+				
+				if(i <=7 ){
+					var x = document.getElementById("lab1");
+				}else if(i >= 8 && i <= 15){
+					var x = document.getElementById("lab2");
+				}else{
+					var x = document.getElementById("lab3");}
+				
+				var elem = document.createElement('label');
+				elem.id = "clab"+[i];
+				x.appendChild(elem);
+				
+				var x = document.getElementById("clab"+[i]);
+				var t = document.createTextNode(i+1);
+				x.appendChild(t);}}
+		cria_lab()
+		
+		function cria_butt(){
+			for (var i=0; i < 24; i++){
+			
+				if(i <=7 ){
+				var x = document.getElementById("dbutt1");
+				}else if(i >= 8 && i <= 15){
+				var x = document.getElementById("dbutt2");
+				}else{
+				var x = document.getElementById("dbutt3");}
+				
+				//var x = document.getElementById("dbutt1");
+				var elem = document.createElement('input');
+				elem.setAttribute('type','checkbox');
+				elem.id = "cbutt"+[i];
+				x.appendChild(elem);
+				
+				//var x_l = document.getElementById("dbutt1");
+				var elem_l = document.createElement('label');
+				elem_l.setAttribute('for','cbutt'+i);
+				x.appendChild(elem_l);}}
+		cria_butt()
+		
+		function cria_ch(){
+			var canal = [];
+			for (var i=0; i < 24; i++){
+			
+				if(i <=7 ){
+				var x = document.getElementById("ch1");
+				}else if(i >= 8 && i <= 15){
+				var x = document.getElementById("ch2");
+				}else{
+				var x = document.getElementById("ch3");}
+			
+				//var x = document.getElementById("ch1");
+				var elem = document.createElement('select');
+				elem.text = canal[i];
+				elem.value = canal[i];
+				elem.id = "inst"+[i];
+				x.appendChild(elem);
+				cria_inst(i)}}
+		cria_ch()
+		
+		function cria_inst(y){
+			var inst = [" ","***",
+						"bateria","bumbo","caixa","prato",
+						"baixo","guitarra","violao",
+						"teclado","pads",
+						"microfone",
+						"ministro","back","akg","shure",
+						"pc"];
+			for (var i=0; i < inst.length; i++){
+				var x = document.getElementById("inst"+y);
+				var elem = document.createElement('option');
+				elem.text = inst[i];
+				elem.value = inst[i];
+				elem.id = inst[i];
+				x.add(elem);}}
+	</script>
+	<footer style="text-align:center; bottom:200px">
+		d4rki3 - Jarson Santos - +55 12 99600-3513
+	</footer>
+	</body>
+</html>

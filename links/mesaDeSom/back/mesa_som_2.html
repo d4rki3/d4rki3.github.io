@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>Mesa de som 2</title>
+        
+    </head>
+    <body>
+        <h1>
+            Mesa de som 2
+        </h1>
+        <p id="demo"></p>
+        
+         <select id="ch1">
+                <option id="vopt"></option>
+                <option>bateria</option>
+                <option>baixo</option>
+                <option>guitarra</option>
+                <option>microfone</option>
+                <option>pc</option>
+            </select>
+        
+        <script>
+            var ch = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+            var text = "";
+            var i;
+            for (i=0; i < ch.length; i++){
+                text += ch[i] +"    ";
+            }
+            document.getElementById("demo").innerHTML = text;
+        </script>
+        
+    </body>
+</html>
