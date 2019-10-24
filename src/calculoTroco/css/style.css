@@ -1,0 +1,91 @@
+
+html, body, div {
+	margin: 10px;
+	padding: 10px; 
+	border:none; 
+	outline:none;
+	list-style-type:none;
+}
+
+body {
+	//width:100%;
+	//height:100%;
+	//background:blue;
+	//align-items:center;
+	//text-align:center;
+	//color:red;
+}
+
+#nt {
+	display:inline-block;
+	width:98%;
+	//height:auto;
+	background:aqua;
+	margin:5px;
+	padding:5px;
+	border-width:10px;
+	border-style:solid;
+	border-color:black;
+}
+
+img {
+	//display:inline-block;
+	//position:relative;
+	//width:300ox;
+	height:90px;
+}
+
+#imgn2 {
+	float:left;
+	width:165px;
+	//height:65px;
+	//max-height:2%;
+	background-size:cover;
+	background-image:url("../img/002_brl.png");
+	background-size: 100% 100%;
+}
+
+#imgn5 {
+	float:left;
+	width:160px;
+	max-height:2%;
+	background-size:cover;
+	background-image:url("../img/005_brl.png");
+	background-size: 100% 100%;
+}
+
+#imgn10 {
+	float:left;
+	width:160px;
+	max-height:2%;
+	background-size:cover;
+	background-image:url("../img/010_brl.jpg");
+	background-size: 100% 100%;
+}
+
+#imgn20 {
+	float:left;
+	width:160px;
+	max-height:2%;
+	background-size:cover;
+	background-image:url("../img/020_brl.jpg");
+	background-size: 100% 100%;
+}
+
+#imgn50 {
+	float:left;
+	width:160px;
+	max-height:2%;
+	background-size:cover;
+	background-image:url("../img/050_brl.jpg");
+	background-size: 100% 100%;
+}
+
+#imgn100 {
+	float:left;
+	width:160px;
+	maxheight:2%;
+	background-size:cover;
+	background-image:url("../img/100_brl.jpg");
+	background-size: 100% 100%;
+}

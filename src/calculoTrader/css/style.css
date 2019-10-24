@@ -1,0 +1,17 @@
+
+body {
+	align-items:center;
+	text-align:center;
+	background:red;
+	//color:blue;
+	font-size:50px;
+	border-width:15px;
+	border-style:solid;
+	border-color:blue;
+	padding:15px;
+}
+hr {
+	height:15px;
+	color:black;
+	background:black;
+}
