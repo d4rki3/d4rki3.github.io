@@ -1,7 +1,7 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-ctx.textAlign = "center"
+ctx.textAlign = "center";
 ctx.font = "25px Verdana";
 // Create gradient
 var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
